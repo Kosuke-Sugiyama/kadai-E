@@ -3,12 +3,12 @@ import time
 
 
 def main():
-    for i in range(3):
+    for i in range(10):
         time.sleep(1)  # ここで1秒止まる
 
     search_URL = 'https://hacker-news.firebaseio.com/v0/topstories.json'
     r = requests.get(search_URL)
-    news_list = r[0:4]
+    news_list = r.json()[0:5]
     # news_list = [21064942, 21067487, 21064911, 21062180, 21066385]
 
     for news_id in news_list:
